@@ -21,24 +21,25 @@
         }
 
         .firework {
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            background-color: #f00;
-            border-radius: 50%;
-            animation: fireworks 1s ease-in-out infinite;
-        }
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-color: #f00;
+        border-radius: 50%;
+        animation: fireworks 1s ease-in-out infinite;
+        transform-origin: center;
+      }
 
-        @keyframes fireworks {
-            0% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) translateX(100px) scale(0);
-                opacity: 0;
-            }
+      @keyframes fireworks {
+        0% {
+          transform: translateY(0) translateX(0) scale(1);
+          opacity: 1;
         }
+        100% {
+          transform: translate(calc(random() * 200px), calc(random() * 200px)) scale(0);
+          opacity: 0;
+        }
+      }
     </style>
 </head>
 <body>
