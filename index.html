@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bethanie</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="fireworks-container"></div>
+    <script>
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.className = "firework";
+            document.getElementById("fireworks-container").appendChild(firework);
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            firework.style.left = x + "px";
+            firework.style.top = y + "px";
+
+            setTimeout(() => {
+                firework.remove();
+            }, 2000); // Adjust the duration of fireworks
+        }
+
+        function launchFireworks() {
+            setInterval(createFirework, 300); // Adjust the frequency of fireworks
+        }
+
+        window.onload = launchFireworks;
+    </script>
+</body>
+</html>
