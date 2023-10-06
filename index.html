@@ -6,39 +6,49 @@
     <title>Happy Birthday Bethanie</title>
     <style>
         body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            overflow: hidden;
-            background-color: black;
-            color: white;
-            font-size: 36px;
+        }
+
+        #birthday {
+            font-size: 24px;
+            color: #fff;
             text-align: center;
-            padding: 100px;
+        }
+
+        .firework {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: fireworks 1s ease-in-out infinite;
+        }
+
+        @keyframes fireworks {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(720deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="fireworks-container"></div>
-    <script>
-        function createFirework() {
-            const firework = document.createElement("div");
-            firework.className = "firework";
-            document.getElementById("fireworks-container").appendChild(firework);
-
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            firework.style.left = x + "px";
-            firework.style.top = y + "px";
-
-            setTimeout(() => {
-                firework.remove();
-            }, 2000); // Adjust the duration of fireworks
-        }
-
-        function launchFireworks() {
-            setInterval(createFirework, 300); // Adjust the frequency of fireworks
-        }
-
-        window.onload = launchFireworks;
-    </script>
+    <div id="birthday">
+        Happy Birthday Bethanie
+        <div class="firework" style="left: 20px;"></div>
+        <div class="firework" style="left: 40px;"></div>
+        <div class="firework" style="left: 60px;"></div>
+        <div class="firework" style="left: 80px;"></div>
+        <div class="firework" style="left: 100px;"></div>
+    </div>
 </body>
 </html>
